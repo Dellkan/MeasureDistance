@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- globals -->
+    <string name="app_name">LocateIt</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- titles -->
+    <string name="title_first_location">First location</string>
+    <string name="title_second_location">Second location</string>
+    
+    <!-- coordinates -->
+    <string name="longtitude">Longtitude</string>
+	<string name="latitude">Latitude</string>
+	<string name="Altitude">Altitude</string>
+	
+	<!-- input descriptions -->
+	<string name="distance">Distance</string>
+	
+	<!-- buttons -->
+	<string name="button_fetch_location">Use current location</string>
+	
+	<!-- messages -->
+	<string name="toast_accuracy">Accuracy of coordinate is: </string>
+	
+</resources>
