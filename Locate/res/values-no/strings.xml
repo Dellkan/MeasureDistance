@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">LocateIt</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-
+    <!-- globals -->
+    <string name="app_name">MeasureDistance</string>
+    <string name="action_settings">Innstillinger</string>
+    
+    <!-- titles -->
+    <string name="title_first_location">Første posisjon</string>
+    <string name="title_second_location">Andre posisjon</string>
+    
+    <!-- coordinates -->
+    <string name="longtitude">lengde</string>
+	<string name="latitude">bredde</string>
+	<string name="Altitude">høyde</string>
+	
+	<!-- input descriptions -->
+	<string name="distance">Avstand</string>
+	
+	<!-- buttons -->
+	<string name="button_fetch_location">Bruk nåværende posisjon</string>
+	
+	<!-- messages -->
+	<string name="toast_accuracy">Koordinat nøyaktighet: </string>
+	
 </resources>
