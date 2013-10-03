@@ -156,6 +156,7 @@
         android:layout_alignRight="@+id/loc2get"
         android:layout_below="@+id/loc2get"
         android:ems="10"
+        android:enabled="false"
         android:inputType="numberDecimal" />
 
     <TextView

@@ -12,6 +12,9 @@ public class CurLocation implements LocationListener {
 
 	// Constructor
 	CurLocation() {
+		// Init curLoc, hopefully fixing nullpointerexceptions
+		this.curLoc = new Location(LocationManager.PASSIVE_PROVIDER);
+		
 		// Get location manager
 		LocationManager lm = ((LocationManager)MainActivity.getContext().getSystemService(Context.LOCATION_SERVICE)); 
 		
@@ -21,8 +24,11 @@ public class CurLocation implements LocationListener {
 		locCriterias.setAltitudeRequired(true);
 		locCriterias.setVerticalAccuracy(Criteria.ACCURACY_HIGH);
 		
-		// Request updates
+		// Request regular updates
 		lm.requestLocationUpdates(500, 10, locCriterias, this, null);
+		
+		// Request single update to get things started
+		lm.requestSingleUpdate(locCriterias, this, null);
 	}
 	
     @Override

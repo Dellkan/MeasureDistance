@@ -69,6 +69,7 @@ public class MainActivity extends Activity {
 	
 	@Override
 	public void onDestroy() {
+		super.onDestroy();
 		// Tell the Location managers that we don't need location updates anymore.
 		curloc.close();
 	}
