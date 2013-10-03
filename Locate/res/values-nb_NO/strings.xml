@@ -2,7 +2,7 @@
 <resources>
 
     <!-- globals -->
-    <string name="app_name">MeasureDistance</string>
+    <string name="app_name">Avstandsmåler</string>
     <string name="action_settings">Innstillinger</string>
     
     <!-- titles -->

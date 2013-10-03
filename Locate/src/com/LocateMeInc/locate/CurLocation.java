@@ -31,10 +31,7 @@ public class CurLocation implements LocationListener {
 		locCriterias.setVerticalAccuracy(Criteria.ACCURACY_HIGH);
 		
 		// Request regular updates
-		lm.requestLocationUpdates(500, 10, locCriterias, this, null);
-		
-		// Request single update to get things started
-		lm.requestSingleUpdate(locCriterias, this, null);
+		lm.requestLocationUpdates(500, 5, locCriterias, this, null);
 	}
 	
     @Override

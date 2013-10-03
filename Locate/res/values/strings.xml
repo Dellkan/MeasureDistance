@@ -2,7 +2,7 @@
 <resources>
 
     <!-- globals -->
-    <string name="app_name">LocateIt</string>
+    <string name="app_name">Measure distance</string>
     <string name="action_settings">Settings</string>
     
     <!-- titles -->
