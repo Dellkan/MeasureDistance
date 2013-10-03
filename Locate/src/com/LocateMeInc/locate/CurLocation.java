@@ -11,12 +11,18 @@ public class CurLocation implements LocationListener {
 	Location curLoc;
 
 	// Constructor
-	CurLocation() {
-		// Init curLoc, hopefully fixing nullpointerexceptions
-		this.curLoc = new Location(LocationManager.PASSIVE_PROVIDER);
-		
+	CurLocation() {		
 		// Get location manager
-		LocationManager lm = ((LocationManager)MainActivity.getContext().getSystemService(Context.LOCATION_SERVICE)); 
+		LocationManager lm = ((LocationManager)MainActivity.getContext().getSystemService(Context.LOCATION_SERVICE));
+		
+		// Use last known location until updates are received
+		this.curLoc = lm.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+		
+		// If there is no known location, replace null with an empty location
+		if (this.curLoc == null) {
+			// Init curLoc, hopefully fixing nullpointerexceptions
+			this.curLoc = new Location(LocationManager.PASSIVE_PROVIDER);
+		}
 		
 		// Set up criteria
 		Criteria locCriterias = new Criteria();
