@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
@@ -18,7 +17,8 @@ import android.view.View;
 public class MainActivity extends FragmentActivity {
 	
 	private static Context context;
-	private FragmentMain fragmentmain;
+	private static FragmentMain fragmentmain;
+	private static FragmentMap fragmentmap;
 	private FragmentPagerAdapter fragmentpager;
 	private ViewPager viewpager;
 	private List<Fragment> fragments = new ArrayList<Fragment>();
@@ -32,18 +32,20 @@ public class MainActivity extends FragmentActivity {
 		MainActivity.context = getApplicationContext();
         
         // Create swiper stuff
-        this.fragmentmain = new FragmentMain();
-        fragments.add(0, this.fragmentmain);
-        fragments.add(1, new FragmentMap());
-        FragmentManager fm = getSupportFragmentManager(); 
-        fragmentpager = new FragmentPagerAdapter(fm) {
+        ;
+        fragments.add(0, MainActivity.fragmentmain = new FragmentMain());
+        fragments.add(1, MainActivity.fragmentmap = new FragmentMap());
+        fragmentpager = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public int getCount() {
               return 2;
             }
             @Override
             public Fragment getItem(final int position) {
-              return fragments.get(position);
+            	if (position == 1) {
+            		//((FragmentMap)fragments.get(1)).updateMap();
+            	}
+            	return fragments.get(position);
             }
             @Override
             public CharSequence getPageTitle(final int position) {
@@ -81,8 +83,8 @@ public class MainActivity extends FragmentActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (this.fragmentmain.getToggle() != null) {
-        	this.fragmentmain.getToggle().onConfigurationChanged(newConfig);
+        if (MainActivity.fragmentmain.getToggle() != null) {
+        	MainActivity.fragmentmain.getToggle().onConfigurationChanged(newConfig);
         }
     }
 
@@ -90,8 +92,8 @@ public class MainActivity extends FragmentActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Pass the event to ActionBarDrawerToggle, if it returns
         // true, then it has handled the app icon touch event
-    	if (this.fragmentmain.getToggle() != null) {
-	        if (this.fragmentmain.getToggle().onOptionsItemSelected(item)) {
+    	if (MainActivity.fragmentmain.getToggle() != null) {
+	        if (MainActivity.fragmentmain.getToggle().onOptionsItemSelected(item)) {
 	          return true;
 	        }
     	}
@@ -99,9 +101,17 @@ public class MainActivity extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
     
+    public static FragmentMain fetchMainFragment() {
+    	return fragmentmain;
+    }
+    
+    public static FragmentMap fetchMapFragment() {
+    	return fragmentmap;
+    }
+    
 	public void fetchLocation(View v) {
 		// Update fields
-		this.fragmentmain.fetchLocation(v);
+		MainActivity.fragmentmain.fetchLocation(v);
 	}
     
 	@Override

@@ -63,6 +63,7 @@ public class FragmentMain extends Fragment {
 	}
 	
 	private void updateTexts(Boolean ispos1, Location loc) {
+		MainActivity.fetchMapFragment().updateMap();
 		View v = this.getView();
 		if (v == null) {
 			if (this.view == null) { return; }
@@ -180,8 +181,8 @@ public class FragmentMain extends Fragment {
         
         // Update fields
         this.view = view;
-     	updateTexts(true, this.loc1);
-     	updateTexts(false, this.loc2);
+     	if (this.loc1 != null) { updateTexts(true, this.loc1); }
+     	if (this.loc2 != null) { updateTexts(false, this.loc2); }
 
 		return view;
 	}
@@ -235,5 +236,17 @@ public class FragmentMain extends Fragment {
     		//e.printStackTrace();
     		Toast.makeText(this.getActivity(), "Unable to load cached locations", Toast.LENGTH_SHORT).show();
     	}
+	}
+	
+	public Location getLoc1() {
+		return this.loc1;
+	}
+	
+	public Location getLoc2() {
+		return this.loc2;
+	}
+	
+	public Location getCurLoc() {
+		return FragmentMain.curloc.getLocation();
 	}
 }

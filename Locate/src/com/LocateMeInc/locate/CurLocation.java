@@ -11,7 +11,7 @@ public class CurLocation implements LocationListener {
 	Location curLoc;
 
 	// Constructor
-	CurLocation() {		
+	CurLocation() {
 		// Get location manager
 		LocationManager lm = ((LocationManager)MainActivity.getContext().getSystemService(Context.LOCATION_SERVICE));
 		
@@ -37,6 +37,7 @@ public class CurLocation implements LocationListener {
     @Override
     public void onLocationChanged(Location loc) {
         this.curLoc = loc;
+        MainActivity.fetchMapFragment().updateMap();
     }
 
     @Override
