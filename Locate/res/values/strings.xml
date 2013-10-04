@@ -13,6 +13,7 @@
     <string name="longtitude">Longitude: </string>
 	<string name="latitude">Latitude: </string>
 	<string name="Altitude">Altitude: </string>
+	<string name="City">City: </string>
 	
 	<!-- input descriptions -->
 	<string name="distance">Distance: </string>
@@ -22,11 +23,16 @@
 	
 	<!-- messages -->
 	<string name="toast_accuracy">Accuracy of coordinate is: </string>
+	<string name="toast_unable_to_determine_city">Unable to determine city: </string>
 	
 	<!-- gps info -->
 	<string name="accuracy">Accuracy: </string>
 	<string name="provider">Provider: </string>
 	<string name="updated">Last update: </string>
 	<string name="satellites">Satellites: </string>
+	
+	<!-- drawer button -->
+	<string name="drawer_open">Open GPS info</string>
+	<string name="drawer_close">Close GPS info</string>
 	
 </resources>

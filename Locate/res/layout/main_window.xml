@@ -10,11 +10,11 @@
     tools:context=".MainActivity" >
 
     <EditText
-        android:id="@+id/loc1lat"
+        android:id="@+id/loc1lat_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
-        android:layout_toRightOf="@+id/textView3"
+        android:layout_toRightOf="@+id/loc1lat"
         android:ems="10"
         android:inputType="numberDecimal" >
 
@@ -33,89 +33,89 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/loc1long"
+        android:id="@+id/loc1long_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/loc1lat"
-        android:layout_below="@+id/loc1lat"
+        android:layout_alignLeft="@+id/loc1lat_val"
+        android:layout_below="@+id/loc1lat_val"
         android:ems="10"
         android:inputType="numberDecimal" />
 
     <EditText
-        android:id="@+id/loc2long"
+        android:id="@+id/loc2long_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/loc2lat"
-        android:layout_below="@+id/loc2lat"
+        android:layout_alignLeft="@+id/loc2lat_val"
+        android:layout_below="@+id/loc2lat_val"
         android:ems="10"
         android:inputType="numberDecimal" />
 
     <EditText
-        android:id="@+id/loc2alt"
+        android:id="@+id/loc2alt_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/loc2long"
-        android:layout_below="@+id/loc2long"
+        android:layout_alignLeft="@+id/loc2long_val"
+        android:layout_below="@+id/loc2long_val"
         android:ems="10"
         android:inputType="numberDecimal" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/loc1long"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/loc1long"
-        android:layout_alignBottom="@+id/loc1long"
-        android:layout_toLeftOf="@+id/loc1long"
+        android:layout_alignBaseline="@+id/loc1long_val"
+        android:layout_alignBottom="@+id/loc1long_val"
+        android:layout_toLeftOf="@+id/loc1long_val"
         android:text="@string/longtitude"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/loc1lat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/loc1lat"
-        android:layout_alignBottom="@+id/loc1lat"
+        android:layout_alignBaseline="@+id/loc1lat_val"
+        android:layout_alignBottom="@+id/loc1lat_val"
         android:layout_alignLeft="@+id/textView1"
         android:text="@string/latitude"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/loc1alt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/loc1alt"
-        android:layout_alignBottom="@+id/loc1alt"
-        android:layout_toLeftOf="@+id/loc1alt"
+        android:layout_alignBaseline="@+id/loc1alt_val"
+        android:layout_alignBottom="@+id/loc1alt_val"
+        android:layout_toLeftOf="@+id/loc1alt_val"
         android:text="@string/Altitude"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/TextView02"
+        android:id="@+id/loc2lat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/loc2lat"
-        android:layout_alignBottom="@+id/loc2lat"
-        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignBaseline="@+id/loc2lat_val"
+        android:layout_alignBottom="@+id/loc2lat_val"
+        android:layout_alignLeft="@+id/loc1alt"
         android:text="@string/latitude"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/TextView03"
+        android:id="@+id/loc2alt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/loc2alt"
-        android:layout_alignBottom="@+id/loc2alt"
-        android:layout_alignRight="@+id/TextView02"
+        android:layout_alignBaseline="@+id/loc2alt_val"
+        android:layout_alignBottom="@+id/loc2alt_val"
+        android:layout_alignRight="@+id/loc2lat"
         android:text="@string/Altitude"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/loc2long"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/loc2long"
-        android:layout_alignBottom="@+id/loc2long"
-        android:layout_alignRight="@+id/TextView02"
+        android:layout_alignBaseline="@+id/loc2long_val"
+        android:layout_alignBottom="@+id/loc2long_val"
+        android:layout_alignRight="@+id/loc2lat"
         android:text="@string/longtitude"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -124,9 +124,9 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView01"
-        android:layout_alignRight="@+id/loc2alt"
-        android:layout_below="@+id/loc2alt"
+        android:layout_alignLeft="@+id/loc2long"
+        android:layout_alignRight="@+id/loc2alt_val"
+        android:layout_below="@+id/loc2alt_val"
         android:text="@string/button_fetch_location"
         android:onClick="fetchLocation" />
 
@@ -135,18 +135,18 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignRight="@+id/loc1alt"
-        android:layout_below="@+id/loc1alt"
+        android:layout_alignLeft="@+id/loc1long"
+        android:layout_alignRight="@+id/loc1alt_val"
+        android:layout_below="@+id/loc1alt_val"
         android:text="@string/button_fetch_location"
         android:onClick="fetchLocation" />
 
     <EditText
-        android:id="@+id/loc1alt"
+        android:id="@+id/loc1alt_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/loc1long"
-        android:layout_below="@+id/loc1long"
+        android:layout_alignRight="@+id/loc1long_val"
+        android:layout_below="@+id/loc1long_val"
         android:ems="10"
         android:inputType="numberDecimal" />
 
@@ -166,7 +166,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/distance"
         android:layout_alignBottom="@+id/distance"
-        android:layout_alignRight="@+id/textView5"
+        android:layout_alignRight="@+id/loc1alt"
         android:text="@string/distance"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -174,13 +174,13 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignLeft="@+id/loc1lat"
         android:layout_below="@+id/loc1get"
         android:text="@string/title_second_location"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/loc2lat"
+        android:id="@+id/loc2lat_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/loc1get"
