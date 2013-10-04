@@ -13,6 +13,7 @@
     <string name="longtitude">lengde: </string>
 	<string name="latitude">bredde: </string>
 	<string name="Altitude">høyde: </string>
+	<string name="City">Adresse: </string>
 	
 	<!-- input descriptions -->
 	<string name="distance">Avstand: </string>

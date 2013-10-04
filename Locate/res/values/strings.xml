@@ -13,7 +13,7 @@
     <string name="longtitude">Longitude: </string>
 	<string name="latitude">Latitude: </string>
 	<string name="Altitude">Altitude: </string>
-	<string name="City">City: </string>
+	<string name="City">Addresse: </string>
 	
 	<!-- input descriptions -->
 	<string name="distance">Distance: </string>
