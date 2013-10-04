@@ -4,29 +4,76 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import android.location.Location;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 	
 	private static Context context;
 	private static CurLocation curloc;
 	private Location loc1;
 	private Location loc2;
+	
+	private void updateCurLocInfo() {
+		Location loc = curloc.getLocation();
+		((TextView)findViewById(R.id.curlocinfo_longitude_val)).setText(Double.toString(loc.getLatitude()));
+		((TextView)findViewById(R.id.curlocinfo_latitude_val)).setText(Double.toString(loc.getLongitude()));
+		((TextView)findViewById(R.id.curlocinfo_altitude_val)).setText(Double.toString(loc.getAltitude()));
+		
+		((TextView)findViewById(R.id.curlocinfo_accuracy_val)).setText(Double.toString(loc.getAccuracy()));
+		((TextView)findViewById(R.id.curlocinfo_provider_val)).setText(loc.getProvider());
+		((TextView)findViewById(R.id.curlocinfo_updated_val)).setText(
+			new SimpleDateFormat(
+				//loc.getTime()
+				"d/LLL kk:mm:ss",
+				Locale.ROOT
+			).format(loc.getTime())
+		);
+		
+		Bundle extras = loc.getExtras();
+		int sat = (extras != null && extras.containsKey("satellites")) ? extras.getInt("satellites") : 0;
+		
+		((TextView)findViewById(R.id.curlocinfo_satellites_val)).setText(Integer.toString(sat));
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		super.setContentView(R.layout.activity_main);
 		context = getApplicationContext();
 		curloc = new CurLocation();
+		
+	    Thread t = new Thread() {
+
+	        @Override
+	        public void run() {
+	            try {
+	                while (!isInterrupted()) {
+	                    Thread.sleep(1000);
+	                    runOnUiThread(new Runnable() {
+	                        @Override
+	                        public void run() {
+	                            updateCurLocInfo();
+	                        }
+	                    });
+	                }
+	            } catch (InterruptedException e) {
+	            }
+	        }
+	    };
+
+	    t.start();
 	}
 
 	@Override
